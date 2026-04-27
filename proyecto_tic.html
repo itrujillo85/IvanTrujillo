@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula del Futuro Digital – Iván Trujillo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f7f9fc;color:#1a1a1a}
+.hero{background:linear-gradient(135deg,#0C447C,#378ADD);color:white;padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.back{color:rgba(255,255,255,0.75);font-size:12px;margin-bottom:1rem;display:inline-block;text-decoration:none}
+.back:hover{color:white}
+.hero-tag{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;display:inline-block;margin-bottom:0.75rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:600;margin-bottom:0.5rem;line-height:1.2}
+.hero .lead{font-size:0.9rem;opacity:0.85;max-width:560px;line-height:1.6;margin-bottom:1.25rem}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,0.15);border-radius:12px;padding:3px 10px;font-size:11px}
+
+.tabs-bar{background:white;border-bottom:2px solid #e8f0fb;display:flex;gap:0;sticky:top;top:0;z-index:10;position:sticky}
+.tab{padding:0.9rem 1.5rem;font-size:13px;font-weight:500;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none}
+.tab:hover{color:#185FA5}
+.tab.active{color:#0C447C;border-bottom-color:#0C447C;font-weight:500}
+
+.main{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+.panel{display:none}
+.panel.active{display:block}
+
+/* ── FICHA ── */
+.ficha-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.ficha-item{background:white;border-radius:12px;padding:1rem 1.25rem;border:1px solid #e8f0fb}
+.ficha-item label{font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:#378ADD;font-weight:500;display:block;margin-bottom:4px}
+.ficha-item p{font-size:13px;color:#333;line-height:1.5}
+.ficha-full{grid-column:1/-1}
+.obj-list{list-style:none;padding:0}
+.obj-list li{font-size:13px;color:#333;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid #f5f5f5;line-height:1.5}
+.obj-list li::before{content:'✓';position:absolute;left:0;color:#185FA5;font-weight:700}
+.mat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:0.75rem}
+.mat-card{background:#E6F1FB;border-radius:10px;padding:0.75rem 1rem;text-align:center}
+.mat-card .ico{font-size:1.5rem;margin-bottom:4px}
+.mat-card p{font-size:12px;color:#0C447C;font-weight:500}
+.comp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.comp-tag{background:#0C447C;color:white;border-radius:10px;padding:3px 10px;font-size:11px}
+.result-box{background:linear-gradient(135deg,#E6F1FB,#f0f7ff);border-radius:12px;padding:1.25rem;border-left:4px solid #185FA5;margin-top:1rem}
+.result-box h4{font-size:13px;font-weight:500;color:#0C447C;margin-bottom:8px}
+.result-box p{font-size:13px;color:#333;line-height:1.6}
+
+/* ── GUÍA PASO A PASO ── */
+.steps{position:relative}
+.steps::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:#E6F1FB;z-index:0}
+.step{display:flex;gap:1rem;margin-bottom:1.5rem;position:relative;z-index:1}
+.step-num{width:44px;height:44px;border-radius:50%;background:#185FA5;color:white;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif}
+.step-body{background:white;border-radius:12px;padding:1rem 1.25rem;flex:1;border:1px solid #e8f0fb}
+.step-body h4{font-size:14px;font-weight:500;color:#0C447C;margin-bottom:4px}
+.step-body .duracion{font-size:11px;color:#378ADD;font-weight:500;background:#E6F1FB;padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:6px}
+.step-body p{font-size:13px;color:#555;line-height:1.6}
+.step-body .tips{margin-top:8px;font-size:12px;color:#888;font-style:italic;padding-left:10px;border-left:2px solid #B5D4F4}
+
+/* ── DEMO INTERACTIVA ── */
+.demo-wrapper{background:white;border-radius:16px;border:1px solid #e8f0fb;overflow:hidden}
+.demo-header{background:#0C447C;color:white;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.demo-header h3{font-size:14px;font-weight:500}
+.demo-nav{display:flex;gap:6px}
+.dnav-btn{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:white;border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer;transition:all 0.15s}
+.dnav-btn:hover,.dnav-btn.active{background:rgba(255,255,255,0.35)}
+
+.demo-screen{padding:1.5rem;min-height:400px}
+.demo-panel{display:none}
+.demo-panel.active{display:block}
+
+.tool-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:1.5rem}
+.tool-card{background:#f7f9fc;border:1px solid #e8f0fb;border-radius:12px;padding:1rem;text-align:center;cursor:pointer;transition:all 0.2s}
+.tool-card:hover,.tool-card.sel{background:#E6F1FB;border-color:#185FA5}
+.tool-card .ti{font-size:2rem;margin-bottom:6px}
+.tool-card h5{font-size:12px;font-weight:500;color:#0C447C;margin-bottom:3px}
+.tool-card p{font-size:11px;color:#666}
+
+.tool-detail{background:#E6F1FB;border-radius:12px;padding:1.25rem;display:none;margin-top:0.5rem}
+.tool-detail.show{display:block}
+.tool-detail h4{font-size:14px;font-weight:500;color:#0C447C;margin-bottom:8px}
+.tool-detail ul{padding-left:1rem}
+.tool-detail ul li{font-size:13px;color:#333;line-height:1.7}
+
+.planner{border:1px solid #e8f0fb;border-radius:12px;overflow:hidden}
+.planner-head{display:grid;grid-template-columns:80px repeat(5,1fr);background:#0C447C;color:white;font-size:11px;font-weight:500}
+.planner-head div,.planner-row div{padding:8px 10px;border-right:1px solid rgba(255,255,255,0.1)}
+.planner-row{display:grid;grid-template-columns:80px repeat(5,1fr);font-size:11px;border-bottom:1px solid #f0f0f0}
+.planner-row:last-child{border-bottom:none}
+.planner-row div{padding:8px 10px;color:#333;border-right:1px solid #f0f0f0}
+.planner-row .time-col{background:#f7f9fc;font-weight:500;color:#0C447C}
+.activity-chip{border-radius:6px;padding:2px 6px;font-size:10px;font-weight:500;display:inline-block}
+.chip-rob{background:#E6F1FB;color:#0C447C}
+.chip-ra{background:#E1F5EE;color:#0F6E56}
+.chip-ia{background:#FAEEDA;color:#633806}
+.chip-col{background:#FAECE7;color:#4A1B0C}
+.chip-eval{background:#f0e8fb;color:#533B8C}
+
+.progress-demo{margin-top:1rem}
+.student-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;background:#f7f9fc;border-radius:10px;padding:8px 12px}
+.st-name{font-size:13px;font-weight:500;min-width:110px}
+.bar-wrap{flex:1;background:#e8f0fb;border-radius:4px;height:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width 0.5s}
+.bar-pct{font-size:12px;font-weight:500;color:#0C447C;min-width:32px;text-align:right}
+
+.section-label{font-family:'Playfair Display',serif;font-size:1rem;color:#0C447C;margin:1.25rem 0 0.75rem;border-bottom:1px solid #e8f0fb;padding-bottom:0.4rem}
+
+.cta-box{background:linear-gradient(135deg,#185FA5,#378ADD);border-radius:14px;padding:1.5rem;text-align:center;color:white;margin-top:2rem}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px}
+.cta-box p{font-size:13px;opacity:0.85;margin-bottom:1rem}
+.cta-btn{background:white;color:#0C447C;border:none;border-radius:20px;padding:8px 22px;font-size:13px;font-weight:500;cursor:pointer}
+.cta-btn:hover{background:#E6F1FB}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a class="back" href="index_proyectos.html">← Volver a proyectos</a>
+  <div class="hero-tag">💻 TIC / Innovación educativa</div>
+  <h1>Aula del Futuro Digital</h1>
+  <p class="lead">Integración de robótica, realidad aumentada e inteligencia artificial como herramientas de aprendizaje activo. Un proyecto transversal para todas las etapas.</p>
+  <div class="hero-pills">
+    <span class="pill">Primaria</span>
+    <span class="pill">Secundaria</span>
+    <span class="pill">Bachillerato</span>
+    <span class="pill">FP</span>
+    <span class="pill">Duración: trimestral / anual</span>
+  </div>
+</div>
+
+<div class="tabs-bar">
+  <button class="tab active" onclick="showTab('ficha',this)">📋 Ficha del proyecto</button>
+  <button class="tab" onclick="showTab('guia',this)">🪜 Guía paso a paso</button>
+  <button class="tab" onclick="showTab('demo',this)">🖥️ Demo interactiva</button>
+</div>
+
+<div class="main">
+
+<!-- ═══════════════ FICHA ═══════════════ -->
+<div class="panel active" id="ficha">
+  <div class="ficha-grid">
+    <div class="ficha-item">
+      <label>Nombre del proyecto</label>
+      <p>Aula del Futuro Digital</p>
+    </div>
+    <div class="ficha-item">
+      <label>Área / Asignatura</label>
+      <p>TIC · Ciencias · Matemáticas · Lengua (transversal)</p>
+    </div>
+    <div class="ficha-item">
+      <label>Etapa educativa</label>
+      <p>Primaria (3º–6º) · Secundaria · Bachillerato · FP</p>
+    </div>
+    <div class="ficha-item">
+      <label>Duración estimada</label>
+      <p>Trimestral (10–12 sesiones) o integración anual</p>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Descripción del proyecto</label>
+      <p>El proyecto transforma el aula convencional en un espacio de creación digital. El alumnado aprende a programar robots (Scratch/Arduino), a crear contenido en realidad aumentada y a usar herramientas de IA educativa para resolver retos reales propuestos por el docente. Se trabaja en equipos cooperativos con roles rotatorios y se finaliza con una exposición de proyectos abierta a la comunidad educativa.</p>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Objetivos didácticos</label>
+      <ul class="obj-list">
+        <li>Desarrollar el pensamiento computacional y la lógica algorítmica</li>
+        <li>Fomentar la creatividad digital mediante robótica y realidad aumentada</li>
+        <li>Introducir el uso responsable y crítico de la IA en el aprendizaje</li>
+        <li>Trabajar competencias transversales: comunicación, colaboración y resolución de problemas</li>
+        <li>Conectar el aprendizaje digital con contenidos curriculares LOMLOE</li>
+      </ul>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Materiales y herramientas</label>
+      <div class="mat-grid">
+        <div class="mat-card"><div class="ico">🤖</div><p>Robots (mBot / Lego Mindstorms)</p></div>
+        <div class="mat-card"><div class="ico">💻</div><p>Tablets / ordenadores con Scratch y Arduino IDE</p></div>
+        <div class="mat-card"><div class="ico">📱</div><p>App RA (Merge Cube / CoSpaces)</p></div>
+        <div class="mat-card"><div class="ico">🧠</div><p>Herramientas IA educativa (Curipod, MagicSchool)</p></div>
+        <div class="mat-card"><div class="ico">📐</div><p>Impresora 3D / Tinkercad (diseño)</p></div>
+        <div class="mat-card"><div class="ico">🗂️</div><p>Google Workspace (Drive, Slides, Forms)</p></div>
+      </div>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Competencias clave (LOMLOE)</label>
+      <div class="comp-tags">
+        <span class="comp-tag">Competencia digital</span>
+        <span class="comp-tag">Matemática y STEM</span>
+        <span class="comp-tag">Comunicación lingüística</span>
+        <span class="comp-tag">Aprender a aprender</span>
+        <span class="comp-tag">Competencias sociales y cívicas</span>
+        <span class="comp-tag">Sentido de la iniciativa</span>
+      </div>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Resultados esperados</label>
+      <div class="result-box">
+        <h4>El alumnado será capaz de:</h4>
+        <p>Programar un robot para ejecutar una secuencia de acciones · Crear un entorno de realidad aumentada vinculado a un tema curricular · Usar la IA para apoyar su aprendizaje de forma crítica y ética · Presentar su proyecto a la comunidad con apoyo digital.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ GUÍA ═══════════════ -->
+<div class="panel" id="guia">
+  <p style="font-size:13px;color:#555;margin-bottom:1.5rem;line-height:1.6">Secuencia didáctica de 10 sesiones (55 min cada una) organizadas en 4 fases. Adaptable a la programación del centro.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Exploración y motivación</h4>
+        <span class="duracion">Sesión 1–2 · 110 min</span>
+        <p>Presentación del proyecto con vídeos de robótica y RA reales. Dinámica "¿Qué sé? ¿Qué quiero aprender?" en grupos. Formación de equipos cooperativos con roles: programador, diseñador, comunicador, evaluador.</p>
+        <div class="tips">💡 Tip: usa ejemplos de proyectos reales de otros centros para motivar desde el primer día.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Pensamiento computacional y robótica</h4>
+        <span class="duracion">Sesión 3–5 · 165 min</span>
+        <p>Introducción a Scratch (Primaria) o Arduino (Secundaria/Bach). Reto progresivo: el robot debe recorrer un laberinto diseñado por los propios alumnos. Trabajo en equipo con retroalimentación entre grupos.</p>
+        <div class="tips">💡 Tip: imprime las instrucciones en tarjetas físicas para alumnado con NEE o dificultades de lectura.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Realidad aumentada e IA educativa</h4>
+        <span class="duracion">Sesión 6–8 · 165 min</span>
+        <p>Cada equipo elige un tema curricular y crea un objeto de RA vinculado a él (ej: sistema solar, célula, monumento histórico). Paralelamente, usan herramientas de IA para generar y evaluar contenido de su proyecto.</p>
+        <div class="tips">💡 Tip: establece un acuerdo de uso ético de la IA con el grupo antes de comenzar esta fase.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Exposición y evaluación entre iguales</h4>
+        <span class="duracion">Sesión 9–10 · 110 min</span>
+        <p>Feria digital interna: cada equipo presenta su proyecto al resto de la clase. Se usa una rúbrica cooevaluativa para valorar creatividad, funcionamiento técnico y comunicación. El docente aporta retroalimentación final y certificados digitales de participación.</p>
+        <div class="tips">💡 Tip: invita a otro grupo o a las familias para dar mayor visibilidad y motivación al alumnado.</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-label">Evaluación</div>
+  <div class="ficha-grid">
+    <div class="ficha-item"><label>Rúbrica de producto</label><p>Funcionamiento del robot/RA · Calidad del contenido · Originalidad</p></div>
+    <div class="ficha-item"><label>Rúbrica de proceso</label><p>Participación · Trabajo cooperativo · Resolución de problemas</p></div>
+    <div class="ficha-item"><label>Autoevaluación</label><p>Reflexión individual al final de cada fase con Google Forms</p></div>
+    <div class="ficha-item"><label>Coevaluación</label><p>Valoración entre equipos en la sesión de exposición final</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DEMO INTERACTIVA ═══════════════ -->
+<div class="panel" id="demo">
+  <div class="demo-wrapper">
+    <div class="demo-header">
+      <h3>🖥️ Simulador de Aula Digital</h3>
+      <div class="demo-nav">
+        <button class="dnav-btn active" onclick="showDemoPanel('herramientas',this)">Herramientas</button>
+        <button class="dnav-btn" onclick="showDemoPanel('planificador',this)">Planificador</button>
+        <button class="dnav-btn" onclick="showDemoPanel('progreso',this)">Progreso</button>
+      </div>
+    </div>
+    <div class="demo-screen">
+
+      <!-- Panel herramientas -->
+      <div class="demo-panel active" id="herramientas">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Haz clic en una herramienta para ver cómo se usa en el aula:</p>
+        <div class="tool-cards">
+          <div class="tool-card" onclick="showTool('scratch')">
+            <div class="ti">🤖</div>
+            <h5>Scratch / Arduino</h5>
+            <p>Robótica y programación</p>
+          </div>
+          <div class="tool-card" onclick="showTool('ra')">
+            <div class="ti">📱</div>
+            <h5>Realidad Aumentada</h5>
+            <p>CoSpaces / Merge Cube</p>
+          </div>
+          <div class="tool-card" onclick="showTool('ia')">
+            <div class="ti">🧠</div>
+            <h5>IA Educativa</h5>
+            <p>Curipod / MagicSchool</p>
+          </div>
+          <div class="tool-card" onclick="showTool('3d')">
+            <div class="ti">🖨️</div>
+            <h5>Impresión 3D</h5>
+            <p>Tinkercad + impresora</p>
+          </div>
+        </div>
+        <div class="tool-detail" id="detail-scratch">
+          <h4>🤖 Scratch / Arduino en el aula</h4>
+          <ul>
+            <li>Primaria (3º–6º): Scratch para programar secuencias y animaciones temáticas</li>
+            <li>Secundaria: mBlock + robot mBot con sensores de distancia y luz</li>
+            <li>Bachillerato/FP: Arduino con proyectos de electrónica aplicada</li>
+            <li>Reto ejemplo: "Programa tu robot para que cuente los pasos de un problema de mates"</li>
+          </ul>
+        </div>
+        <div class="tool-detail" id="detail-ra">
+          <h4>📱 Realidad Aumentada en el aula</h4>
+          <ul>
+            <li>CoSpaces Edu: crea mundos 3D con objetos curriculares (biología, historia, geografía)</li>
+            <li>Merge Cube: el alumnado sostiene objetos 3D en la mano con el móvil</li>
+            <li>Uso adaptado para ACNEAE: interfaces simplificadas con pictogramas</li>
+            <li>Producto final: visita virtual a un tema de clase presentada a la comunidad</li>
+          </ul>
+        </div>
+        <div class="tool-detail" id="detail-ia">
+          <h4>🧠 IA Educativa de forma ética</h4>
+          <ul>
+            <li>Curipod: el docente genera presentaciones interactivas con IA en segundos</li>
+            <li>MagicSchool: generación de rúbricas, adaptaciones y materiales diferenciados</li>
+            <li>El alumnado aprende a evaluar críticamente las respuestas de la IA</li>
+            <li>Debate guiado: ¿cuándo ayuda la IA y cuándo limita el aprendizaje?</li>
+          </ul>
+        </div>
+        <div class="tool-detail" id="detail-3d">
+          <h4>🖨️ Diseño e Impresión 3D</h4>
+          <ul>
+            <li>Tinkercad (navegador): diseño 3D sin instalación, ideal para centros con recursos limitados</li>
+            <li>Proyectos: piezas de ajedrez, modelos anatómicos, maquetas históricas</li>
+            <li>Integración con EF: diseño de materiales deportivos adaptados</li>
+            <li>Cada pieza impresa va acompañada de una ficha de proceso reflexivo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Panel planificador -->
+      <div class="demo-panel" id="planificador">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Ejemplo de distribución semanal de herramientas TIC en el aula (simulación de un trimestre):</p>
+        <div class="planner">
+          <div class="planner-head">
+            <div>Semana</div><div>Lunes</div><div>Martes</div><div>Miércoles</div><div>Jueves</div><div>Viernes</div>
+          </div>
+          <div class="planner-row">
+            <div class="time-col">Sem 1</div>
+            <div><span class="activity-chip chip-rob">Intro Scratch</span></div>
+            <div></div>
+            <div><span class="activity-chip chip-rob">Robot laberinto</span></div>
+            <div></div>
+            <div><span class="activity-chip chip-col">Equipo roles</span></div>
+          </div>
+          <div class="planner-row">
+            <div class="time-col">Sem 2</div>
+            <div><span class="activity-chip chip-rob">Arduino básico</span></div>
+            <div><span class="activity-chip chip-ra">Intro RA</span></div>
+            <div></div>
+            <div><span class="activity-chip chip-ra">CoSpaces</span></div>
+            <div></div>
+          </div>
+          <div class="planner-row">
+            <div class="time-col">Sem 3</div>
+            <div></div>
+            <div><span class="activity-chip chip-ia">IA Curipod</span></div>
+            <div><span class="activity-chip chip-ia">Debate IA ética</span></div>
+            <div></div>
+            <div><span class="activity-chip chip-col">Avance proyecto</span></div>
+          </div>
+          <div class="planner-row">
+            <div class="time-col">Sem 4</div>
+            <div><span class="activity-chip chip-col">Ensayo expo</span></div>
+            <div></div>
+            <div><span class="activity-chip chip-eval">Coevaluación</span></div>
+            <div><span class="activity-chip chip-eval">Expo final</span></div>
+            <div></div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#888;margin-top:10px">🤖 Robótica &nbsp; 📱 Realidad aumentada &nbsp; 🧠 IA educativa &nbsp; 👥 Colaborativo &nbsp; ✅ Evaluación</p>
+      </div>
+
+      <!-- Panel progreso -->
+      <div class="demo-panel" id="progreso">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Ejemplo de seguimiento de competencia digital por alumno/a (simulado):</p>
+        <div class="progress-demo">
+          <div class="student-row">
+            <span class="st-name">Alumno A</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:88%;background:#185FA5"></div></div>
+            <span class="bar-pct">88%</span>
+          </div>
+          <div class="student-row">
+            <span class="st-name">Alumno B (NEE)</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:65%;background:#0F6E56"></div></div>
+            <span class="bar-pct">65%</span>
+          </div>
+          <div class="student-row">
+            <span class="st-name">Alumno C</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:79%;background:#185FA5"></div></div>
+            <span class="bar-pct">79%</span>
+          </div>
+          <div class="student-row">
+            <span class="st-name">Alumno D (TEA)</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:72%;background:#854F0B"></div></div>
+            <span class="bar-pct">72%</span>
+          </div>
+          <div class="student-row">
+            <span class="st-name">Alumno E</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:94%;background:#185FA5"></div></div>
+            <span class="bar-pct">94%</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:#888;margin-top:12px">📊 Datos simulados · El seguimiento real se gestiona en Google Sheets compartido con el equipo docente</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3>¿Quieres implementar este proyecto en tu centro?</h3>
+    <p>Contacta con Iván para recibir la programación completa adaptada a tu etapa y recursos disponibles.</p>
+    <button class="cta-btn" onclick="window.location.href='mailto:ivtrujilloc@gmail.com?subject=Proyecto Aula del Futuro Digital'">Solicitar programación completa</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function showDemoPanel(id, btn) {
+  document.querySelectorAll('.demo-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.dnav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function showTool(id) {
+  document.querySelectorAll('.tool-detail').forEach(d => d.classList.remove('show'));
+  document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('sel'));
+  document.getElementById('detail-'+id).classList.add('show');
+  event.currentTarget.classList.add('sel');
+}
+</script>
+</body>
+</html>

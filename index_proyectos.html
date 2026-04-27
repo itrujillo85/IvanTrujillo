@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos Docentes – Iván Trujillo Corrochano</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f7f5f0;color:#1a1a1a;min-height:100vh}
+
+.hero{background:linear-gradient(135deg,#0C447C 0%,#185FA5 60%,#378ADD 100%);color:white;padding:3.5rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero h1{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:600;margin-bottom:0.5rem;position:relative;z-index:1}
+.hero p{font-size:1rem;opacity:0.85;font-weight:300;max-width:550px;margin:0 auto 1.5rem;position:relative;z-index:1;line-height:1.6}
+.hero-meta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.hero-meta span{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500}
+
+.main{max-width:800px;margin:0 auto;padding:2.5rem 1.5rem}
+
+.section-header{text-align:center;margin-bottom:2rem}
+.section-header h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#0C447C;margin-bottom:0.5rem}
+.section-header p{font-size:0.9rem;color:#555;max-width:500px;margin:0 auto}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;margin-bottom:3rem}
+
+.project-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.07);transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.12)}
+
+.card-header{padding:1.5rem 1.5rem 1rem;position:relative}
+.card-icon{font-size:2.2rem;margin-bottom:0.75rem;display:block}
+.card-tag{position:absolute;top:1.25rem;right:1.25rem;font-size:10px;font-weight:500;padding:3px 10px;border-radius:12px}
+.card-header h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:#1a1a1a;margin-bottom:0.4rem;line-height:1.3}
+.card-header p{font-size:0.82rem;color:#666;line-height:1.5}
+
+.card-footer{padding:1rem 1.5rem 1.25rem;border-top:1px solid #f0ede8;display:flex;gap:8px;flex-wrap:wrap}
+.badge-etapa{font-size:10px;background:#E6F1FB;color:#0C447C;padding:3px 9px;border-radius:10px;font-weight:500}
+
+.card-links{padding:0 1.5rem 1.25rem;display:flex;gap:8px}
+.btn-demo{display:inline-block;padding:7px 16px;border-radius:8px;font-size:12px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:all 0.15s}
+.btn-primary{background:#185FA5;color:white}
+.btn-primary:hover{background:#0C447C}
+.btn-secondary{background:#f0ede8;color:#444}
+.btn-secondary:hover{background:#e5e0d8}
+
+.tic{border-top:4px solid #185FA5}
+.tic .card-tag{background:#E6F1FB;color:#185FA5}
+.ef{border-top:4px solid #0F6E56}
+.ef .card-tag{background:#E1F5EE;color:#0F6E56}
+.pt{border-top:4px solid #854F0B}
+.pt .card-tag{background:#FAEEDA;color:#633806}
+.dep{border-top:4px solid #993C1D}
+.dep .card-tag{background:#FAECE7;color:#4A1B0C}
+
+.instrucciones{background:white;border-radius:16px;padding:1.75rem;margin-bottom:2rem;border-left:4px solid #378ADD}
+.instrucciones h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#0C447C;margin-bottom:0.75rem}
+.instrucciones ol{padding-left:1.25rem}
+.instrucciones ol li{font-size:0.87rem;color:#444;line-height:1.7;margin-bottom:0.3rem}
+.instrucciones code{background:#f0ede8;padding:1px 6px;border-radius:4px;font-family:monospace;font-size:0.82rem;color:#185FA5}
+
+.footer{text-align:center;padding:1.5rem;font-size:0.8rem;color:#888;border-top:1px solid #e5e0d8;margin-top:2rem}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Proyectos Docentes</h1>
+  <p>Propuestas pedagógicas diseñadas por Iván Trujillo Corrochano para implementar en tu centro educativo</p>
+  <div class="hero-meta">
+    <span>🎓 Todas las etapas</span>
+    <span>💡 4 áreas de intervención</span>
+    <span>📋 Fichas + guías + demos</span>
+    <span>✅ Disponible desde sept. 2026</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="instrucciones">
+    <h3>📌 Cómo usar estas demos en Google Sites</h3>
+    <ol>
+      <li>Descarga el archivo HTML del proyecto que quieras mostrar</li>
+      <li>Súbelo a <strong>Google Drive</strong> y obtén el enlace de vista previa</li>
+      <li>En Google Sites, inserta un bloque de tipo <code>Insertar › Insertar iframe</code> o usa <strong>Google Sites › Incrustar</strong></li>
+      <li>Pega la URL del archivo o copia el código HTML directamente en el bloque de inserción personalizada</li>
+      <li>Ajusta el tamaño del bloque al ancho de tu página (recomendado: 100% ancho, alto 600–900px)</li>
+    </ol>
+  </div>
+
+  <div class="section-header">
+    <h2>Proyectos disponibles</h2>
+    <p>Haz clic en "Ver demo" para abrir cada proyecto en una página completa lista para Google Sites</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card tic">
+      <div class="card-header">
+        <span class="card-icon">💻</span>
+        <span class="card-tag">TIC / Innovación</span>
+        <h3>Aula del Futuro Digital</h3>
+        <p>Integración de robótica, realidad aumentada e IA educativa como herramientas de aprendizaje activo en todas las etapas.</p>
+      </div>
+      <div class="card-footer">
+        <span class="badge-etapa">Primaria</span>
+        <span class="badge-etapa">Secundaria</span>
+        <span class="badge-etapa">Bachillerato</span>
+        <span class="badge-etapa">FP</span>
+      </div>
+      <div class="card-links">
+        <a class="btn-demo btn-primary" href="proyecto_tic.html" target="_blank">Ver demo completa</a>
+      </div>
+    </div>
+
+    <div class="project-card ef">
+      <div class="card-header">
+        <span class="card-icon">🏃</span>
+        <span class="card-tag">Ed. Física</span>
+        <h3>Educación Física Inclusiva</h3>
+        <p>Programa de EF adaptada que integra al alumnado con NEE y TEA mediante metodología activa, juego cooperativo y retos motores.</p>
+      </div>
+      <div class="card-footer">
+        <span class="badge-etapa">Infantil</span>
+        <span class="badge-etapa">Primaria</span>
+        <span class="badge-etapa">Secundaria</span>
+        <span class="badge-etapa">Bachillerato</span>
+      </div>
+      <div class="card-links">
+        <a class="btn-demo btn-primary" href="proyecto_ef.html" target="_blank">Ver demo completa</a>
+      </div>
+    </div>
+
+    <div class="project-card pt">
+      <div class="card-header">
+        <span class="card-icon">🧩</span>
+        <span class="card-tag">PT / Diversidad</span>
+        <h3>Plan de Inclusión y Atención a la Diversidad</h3>
+        <p>Protocolo de intervención PT con alumnado ACNEAE, estrategias ACI, coordinación con familias y seguimiento individualizado.</p>
+      </div>
+      <div class="card-footer">
+        <span class="badge-etapa">Infantil</span>
+        <span class="badge-etapa">Primaria</span>
+        <span class="badge-etapa">Secundaria</span>
+        <span class="badge-etapa">FP</span>
+      </div>
+      <div class="card-links">
+        <a class="btn-demo btn-primary" href="proyecto_pt.html" target="_blank">Ver demo completa</a>
+      </div>
+    </div>
+
+    <div class="project-card dep">
+      <div class="card-header">
+        <span class="card-icon">⚽</span>
+        <span class="card-tag">Extraescolar</span>
+        <h3>Academia Deportiva Escolar</h3>
+        <p>Programa extraescolar de deporte educativo con metodología UEFA PRO: valores, liderazgo, trabajo en equipo y desarrollo integral.</p>
+      </div>
+      <div class="card-footer">
+        <span class="badge-etapa">Primaria</span>
+        <span class="badge-etapa">Secundaria</span>
+        <span class="badge-etapa">Bachillerato</span>
+      </div>
+      <div class="card-links">
+        <a class="btn-demo btn-primary" href="proyecto_deportivo.html" target="_blank">Ver demo completa</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  Iván Trujillo Corrochano · ivtrujilloc@gmail.com · +34 606 104 595 · Disponible sept. 2026
+</div>
+
+</body>
+</html>

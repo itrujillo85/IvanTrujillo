@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Inclusión PT – Iván Trujillo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fffaf4;color:#1a1a1a}
+.hero{background:linear-gradient(135deg,#633806,#854F0B,#BA7517);color:white;padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.back{color:rgba(255,255,255,0.75);font-size:12px;margin-bottom:1rem;display:inline-block;text-decoration:none}
+.hero-tag{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;display:inline-block;margin-bottom:0.75rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:600;margin-bottom:0.5rem;line-height:1.2}
+.hero .lead{font-size:0.9rem;opacity:0.85;max-width:560px;line-height:1.6;margin-bottom:1.25rem}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,0.15);border-radius:12px;padding:3px 10px;font-size:11px}
+
+.tabs-bar{background:white;border-bottom:2px solid #FAC775;display:flex;position:sticky;top:0;z-index:10}
+.tab{padding:0.9rem 1.5rem;font-size:13px;font-weight:500;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none}
+.tab:hover{color:#854F0B}
+.tab.active{color:#633806;border-bottom-color:#BA7517}
+
+.main{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+.panel{display:none}.panel.active{display:block}
+
+.ficha-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.ficha-item{background:white;border-radius:12px;padding:1rem 1.25rem;border:1px solid #FAC775}
+.ficha-item label{font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:#BA7517;font-weight:500;display:block;margin-bottom:4px}
+.ficha-item p{font-size:13px;color:#333;line-height:1.5}
+.ficha-full{grid-column:1/-1}
+.obj-list{list-style:none;padding:0}
+.obj-list li{font-size:13px;color:#333;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid #fdf5e8;line-height:1.5}
+.obj-list li::before{content:'✓';position:absolute;left:0;color:#BA7517;font-weight:700}
+.mat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:0.75rem}
+.mat-card{background:#FAEEDA;border-radius:10px;padding:0.75rem 1rem;text-align:center}
+.mat-card .ico{font-size:1.5rem;margin-bottom:4px}
+.mat-card p{font-size:12px;color:#633806;font-weight:500}
+.comp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.comp-tag{background:#633806;color:white;border-radius:10px;padding:3px 10px;font-size:11px}
+.result-box{background:linear-gradient(135deg,#FAEEDA,#fffaf4);border-radius:12px;padding:1.25rem;border-left:4px solid #BA7517;margin-top:1rem}
+.result-box h4{font-size:13px;font-weight:500;color:#633806;margin-bottom:8px}
+.result-box p{font-size:13px;color:#333;line-height:1.6}
+
+.steps{position:relative}
+.steps::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:#FAC775;z-index:0}
+.step{display:flex;gap:1rem;margin-bottom:1.5rem;position:relative;z-index:1}
+.step-num{width:44px;height:44px;border-radius:50%;background:#BA7517;color:white;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif}
+.step-body{background:white;border-radius:12px;padding:1rem 1.25rem;flex:1;border:1px solid #FAC775}
+.step-body h4{font-size:14px;font-weight:500;color:#633806;margin-bottom:4px}
+.step-body .duracion{font-size:11px;color:#BA7517;font-weight:500;background:#FAEEDA;padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:6px}
+.step-body p{font-size:13px;color:#555;line-height:1.6}
+.step-body .tips{margin-top:8px;font-size:12px;color:#888;font-style:italic;padding-left:10px;border-left:2px solid #FAC775}
+.section-label{font-family:'Playfair Display',serif;font-size:1rem;color:#633806;margin:1.25rem 0 0.75rem;border-bottom:1px solid #FAC775;padding-bottom:0.4rem}
+
+.demo-wrapper{background:white;border-radius:16px;border:1px solid #FAC775;overflow:hidden}
+.demo-header{background:#633806;color:white;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.demo-header h3{font-size:14px;font-weight:500}
+.demo-nav{display:flex;gap:6px;flex-wrap:wrap}
+.dnav-btn{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:white;border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer}
+.dnav-btn:hover,.dnav-btn.active{background:rgba(255,255,255,0.35)}
+.demo-screen{padding:1.5rem;min-height:380px}
+.demo-panel{display:none}.demo-panel.active{display:block}
+
+/* Protocolo visual */
+.proto-flow{display:flex;flex-direction:column;gap:8px}
+.proto-step{display:flex;align-items:flex-start;gap:12px;background:#fffaf4;border-radius:10px;padding:10px 14px;border:1px solid #FAC775}
+.proto-num{background:#BA7517;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.proto-text h5{font-size:13px;font-weight:500;color:#633806;margin-bottom:2px}
+.proto-text p{font-size:12px;color:#666;line-height:1.5}
+.proto-arrow{text-align:center;font-size:18px;color:#FAC775}
+
+/* Perfiles de alumno */
+.perfiles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.perfil-card{border-radius:12px;padding:1rem;border:1px solid;cursor:pointer;transition:all 0.2s}
+.perfil-card:hover,.perfil-card.sel{transform:translateY(-2px)}
+.pc-tea{border-color:#E24B4A;background:#fff8f8}
+.pc-tea:hover,.pc-tea.sel{background:#FCEBEB}
+.pc-dislexia{border-color:#185FA5;background:#f4f8ff}
+.pc-dislexia:hover,.pc-dislexia.sel{background:#E6F1FB}
+.pc-tdah{border-color:#0F6E56;background:#f4faf7}
+.pc-tdah:hover,.pc-tdah.sel{background:#E1F5EE}
+.pc-motriz{border-color:#854F0B;background:#fffaf4}
+.pc-motriz:hover,.pc-motriz.sel{background:#FAEEDA}
+.perfil-card .p-ico{font-size:1.8rem;margin-bottom:6px}
+.perfil-card h5{font-size:13px;font-weight:500;margin-bottom:4px}
+.perfil-card p{font-size:11px;color:#666;line-height:1.4}
+
+.perfil-detail{border-radius:12px;padding:1.25rem;margin-top:1rem;display:none}
+.perfil-detail.show{display:block}
+.perfil-detail h4{font-size:14px;font-weight:500;margin-bottom:8px}
+.perfil-detail ul{padding-left:1rem}
+.perfil-detail ul li{font-size:13px;line-height:1.7}
+.pd-tea{background:#FCEBEB;color:#501313}.pd-dislexia{background:#E6F1FB;color:#042C53}.pd-tdah{background:#E1F5EE;color:#04342C}.pd-motriz{background:#FAEEDA;color:#412402}
+
+/* Informe preview */
+.informe-preview{border:1px solid #FAC775;border-radius:12px;overflow:hidden}
+.inf-header{background:#FAEEDA;padding:1rem 1.25rem;border-bottom:1px solid #FAC775}
+.inf-header h4{font-size:14px;font-weight:500;color:#633806}
+.inf-header p{font-size:12px;color:#854F0B}
+.inf-body{padding:1rem 1.25rem}
+.inf-field{margin-bottom:10px}
+.inf-field label{font-size:11px;color:#BA7517;font-weight:500;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.4px}
+.inf-field .val{font-size:13px;color:#333;background:#fffaf4;border:1px solid #FAC775;border-radius:8px;padding:6px 10px;line-height:1.5}
+.inf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.cta-box{background:linear-gradient(135deg,#633806,#BA7517);border-radius:14px;padding:1.5rem;text-align:center;color:white;margin-top:2rem}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px}
+.cta-box p{font-size:13px;opacity:0.85;margin-bottom:1rem}
+.cta-btn{background:white;color:#633806;border:none;border-radius:20px;padding:8px 22px;font-size:13px;font-weight:500;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="hero">
+  <a class="back" href="index_proyectos.html">← Volver a proyectos</a>
+  <div class="hero-tag">🧩 Pedagogía Terapéutica · Diversidad</div>
+  <h1>Plan de Inclusión y Atención a la Diversidad</h1>
+  <p class="lead">Protocolo completo de intervención PT con alumnado ACNEAE: evaluación inicial, adaptaciones curriculares, seguimiento individualizado y coordinación con familias y equipo docente.</p>
+  <div class="hero-pills">
+    <span class="pill">Infantil</span><span class="pill">Primaria</span><span class="pill">Secundaria</span><span class="pill">FP</span><span class="pill">Duración: anual</span>
+  </div>
+</div>
+
+<div class="tabs-bar">
+  <button class="tab active" onclick="showTab('ficha',this)">📋 Ficha del proyecto</button>
+  <button class="tab" onclick="showTab('guia',this)">🪜 Guía paso a paso</button>
+  <button class="tab" onclick="showTab('demo',this)">🖥️ Demo interactiva</button>
+</div>
+
+<div class="main">
+
+<!-- FICHA -->
+<div class="panel active" id="ficha">
+  <div class="ficha-grid">
+    <div class="ficha-item"><label>Nombre del proyecto</label><p>Plan de Inclusión y Atención a la Diversidad</p></div>
+    <div class="ficha-item"><label>Área</label><p>Pedagogía Terapéutica · Orientación · Tutoría</p></div>
+    <div class="ficha-item"><label>Etapa educativa</label><p>Infantil · Primaria · Secundaria · FP</p></div>
+    <div class="ficha-item"><label>Duración</label><p>Anual con revisión trimestral</p></div>
+    <div class="ficha-item ficha-full">
+      <label>Descripción</label>
+      <p>Un plan integral de atención a la diversidad que va más allá del apoyo puntual. Incluye protocolo de detección, evaluación psicopedagógica inicial, diseño de adaptaciones curriculares individualizadas (ACI) significativas y no significativas, intervención directa con el alumnado, coordinación con el equipo docente y las familias, y seguimiento e informe trimestral. Basado en el enfoque DUA y alineado con la LOMLOE.</p>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Objetivos</label>
+      <ul class="obj-list">
+        <li>Detectar y evaluar las necesidades específicas de apoyo educativo (ACNEAE) desde el inicio del curso</li>
+        <li>Diseñar adaptaciones curriculares individualizadas (ACI) coordinadas con el tutor</li>
+        <li>Intervenir directamente con el alumnado en sesiones de apoyo PT dentro y fuera del aula</li>
+        <li>Orientar al equipo docente en estrategias metodológicas de atención a la diversidad</li>
+        <li>Mantener comunicación fluida y estructurada con las familias</li>
+        <li>Elaborar informes de evolución trimestrales y anuales</li>
+      </ul>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Recursos y herramientas</label>
+      <div class="mat-grid">
+        <div class="mat-card"><div class="ico">📋</div><p>Protocolos de evaluación inicial (WISC, TALE, Prolec)</p></div>
+        <div class="mat-card"><div class="ico">📝</div><p>Plantillas ACI (significativa y no significativa)</p></div>
+        <div class="mat-card"><div class="ico">🧩</div><p>Materiales manipulativos y pictográficos</p></div>
+        <div class="mat-card"><div class="ico">📱</div><p>Apps: Araword, Picto Selector, Clic 3.0</p></div>
+        <div class="mat-card"><div class="ico">📊</div><p>Google Sheets de seguimiento compartido con equipo</p></div>
+        <div class="mat-card"><div class="ico">📧</div><p>Protocolo de comunicación con familias (Forms / email)</p></div>
+      </div>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Competencias clave (LOMLOE)</label>
+      <div class="comp-tags">
+        <span class="comp-tag">Comunicación lingüística</span>
+        <span class="comp-tag">Matemática y STEM</span>
+        <span class="comp-tag">Aprender a aprender</span>
+        <span class="comp-tag">Competencias sociales</span>
+        <span class="comp-tag">Autonomía e iniciativa personal</span>
+      </div>
+    </div>
+    <div class="ficha-item ficha-full">
+      <label>Resultados esperados</label>
+      <div class="result-box">
+        <h4>El alumnado ACNEAE y el centro se benefician de:</h4>
+        <p>Detección temprana y respuesta educativa ajustada · Reducción de brechas de aprendizaje · Mayor autonomía e inclusión del alumnado con NEE · Equipo docente con mayor capacidad de respuesta a la diversidad · Familias informadas y comprometidas con el proceso educativo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GUÍA -->
+<div class="panel" id="guia">
+  <p style="font-size:13px;color:#555;margin-bottom:1.5rem;line-height:1.6">Protocolo de actuación PT estructurado en 5 fases a lo largo del curso escolar, coordinado con el equipo de orientación del centro.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Detección y evaluación inicial</h4>
+        <span class="duracion">Septiembre · Semanas 1–3</span>
+        <p>Revisión de expedientes e informes del curso anterior. Observación directa en el aula ordinaria. Aplicación de pruebas de evaluación inicial (screening). Reunión con tutores y orientador para identificar al alumnado ACNEAE. Contacto inicial con las familias.</p>
+        <div class="tips">💡 Tip: usa un formulario Google Forms para que los tutores reporten observaciones de los primeros días — agiliza la detección.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Diseño de adaptaciones curriculares (ACI)</h4>
+        <span class="duracion">Octubre · En coordinación con tutores</span>
+        <p>Elaboración de ACI no significativas (modificaciones metodológicas, temporales, de evaluación) y significativas (modificación de objetivos y contenidos mínimos) cuando proceda. Coordinación con el tutor para integrar la ACI en la programación de aula. Comunicación a las familias y firma del documento.</p>
+        <div class="tips">💡 Tip: mantén un archivo digital en Drive compartido con el tutor y la dirección — facilita el seguimiento y la inspección.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Intervención directa con el alumnado</h4>
+        <span class="duracion">Octubre–Junio · Sesiones regulares</span>
+        <p>Sesiones individuales o en pequeño grupo (dentro o fuera del aula ordinaria según el perfil). Trabajo de habilidades instrumentales, lectoescritura, cálculo, comprensión, habilidades sociales o comunicación según necesidad. Uso de materiales manipulativos, pictogramas, apps y tecnología asistiva. Registro de evolución sesión a sesión.</p>
+        <div class="tips">💡 Tip: alterna sesiones dentro del aula (inclusión) con sesiones fuera (intervención intensiva) para no estigmatizar al alumnado.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Coordinación con el equipo y las familias</h4>
+        <span class="duracion">Mensual / Trimestral</span>
+        <p>Reunión mensual de coordinación con tutores y orientador. Reunión trimestral con las familias para informar sobre evolución, ajustar las adaptaciones y recoger su visión del proceso en casa. Comunicación continua por email o Google Meet para incidencias o cambios relevantes.</p>
+        <div class="tips">💡 Tip: prepara una ficha de seguimiento familiar de 1 página con lenguaje claro, sin tecnicismos — las familias lo agradecen.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h4>Informe de evolución y revisión de objetivos</h4>
+        <span class="duracion">Enero, Abril y Junio</span>
+        <p>Elaboración del informe trimestral de cada alumno ACNEAE: logros, dificultades persistentes, ajuste de objetivos y propuesta para el siguiente trimestre. Informe final anual con orientaciones para el curso siguiente y, si procede, propuesta de cambio de medida (ordinaria → específica). Traslado al expediente del alumno/a.</p>
+        <div class="tips">💡 Tip: usa una plantilla de informe estructurado en Google Docs para agilizar la redacción y mantener la coherencia entre cursos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO -->
+<div class="panel" id="demo">
+  <div class="demo-wrapper">
+    <div class="demo-header">
+      <h3>🧩 Simulador de Intervención PT</h3>
+      <div class="demo-nav">
+        <button class="dnav-btn active" onclick="showDP('protocolo',this)">Protocolo</button>
+        <button class="dnav-btn" onclick="showDP('perfiles',this)">Perfiles</button>
+        <button class="dnav-btn" onclick="showDP('informe',this)">Informe</button>
+      </div>
+    </div>
+    <div class="demo-screen">
+
+      <div class="demo-panel active" id="protocolo">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Flujo de actuación PT desde la detección hasta el informe final:</p>
+        <div class="proto-flow">
+          <div class="proto-step"><div class="proto-num">1</div><div class="proto-text"><h5>Detección</h5><p>Observación en aula + screening inicial + revisión de expedientes</p></div></div>
+          <div class="proto-arrow">↓</div>
+          <div class="proto-step"><div class="proto-num">2</div><div class="proto-text"><h5>Evaluación psicopedagógica</h5><p>Pruebas estandarizadas + entrevista familiar + informe de orientación</p></div></div>
+          <div class="proto-arrow">↓</div>
+          <div class="proto-step"><div class="proto-num">3</div><div class="proto-text"><h5>Diseño ACI + medidas</h5><p>ACI no significativa / significativa + medidas ordinarias y específicas</p></div></div>
+          <div class="proto-arrow">↓</div>
+          <div class="proto-step"><div class="proto-num">4</div><div class="proto-text"><h5>Intervención PT</h5><p>Sesiones individuales/grupo + coordinación docente + seguimiento familiar</p></div></div>
+          <div class="proto-arrow">↓</div>
+          <div class="proto-step"><div class="proto-num">5</div><div class="proto-text"><h5>Informe trimestral</h5><p>Evolución · Ajuste de objetivos · Propuesta de continuidad o cambio</p></div></div>
+        </div>
+      </div>
+
+      <div class="demo-panel" id="perfiles">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Selecciona un perfil de alumnado para ver las estrategias de intervención PT:</p>
+        <div class="perfiles-grid">
+          <div class="perfil-card pc-tea" onclick="showPerfil('tea')">
+            <div class="p-ico">🧩</div><h5>Alumnado TEA</h5><p>Trastorno del espectro autista</p>
+          </div>
+          <div class="perfil-card pc-dislexia" onclick="showPerfil('dislexia')">
+            <div class="p-ico">📖</div><h5>Dislexia / DEA</h5><p>Dificultades específicas de aprendizaje</p>
+          </div>
+          <div class="perfil-card pc-tdah" onclick="showPerfil('tdah')">
+            <div class="p-ico">⚡</div><h5>TDAH</h5><p>Trastorno por déficit de atención</p>
+          </div>
+          <div class="perfil-card pc-motriz" onclick="showPerfil('motriz')">
+            <div class="p-ico">♿</div><h5>Discapacidad motriz</h5><p>Necesidades de accesibilidad física</p>
+          </div>
+        </div>
+        <div class="perfil-detail pd-tea" id="detail-tea"><h4>🧩 Intervención PT – Perfil TEA</h4><ul><li>Estructuración del entorno: agenda visual, zona de trabajo definida</li><li>Anticipación de cambios con aviso verbal y visual previo</li><li>Uso de pictogramas (ARASAAC) para instrucciones y comunicación</li><li>Trabajo de habilidades sociales en pequeño grupo</li><li>Comunicación diaria con la familia mediante diario/agenda</li></ul></div>
+        <div class="perfil-detail pd-dislexia" id="detail-dislexia"><h4>📖 Intervención PT – Dislexia / DEA</h4><ul><li>Método multisensorial para lectoescritura (Barton, Dislexia Sin Barreras)</li><li>Ampliación de tiempo y uso de tipografías adaptadas (OpenDyslexic)</li><li>Evaluación oral como alternativa a la escrita</li><li>Uso de software lector de pantalla y dictado por voz</li><li>Trabajo de autoestima y autoconcepto académico</li></ul></div>
+        <div class="perfil-detail pd-tdah" id="detail-tdah"><h4>⚡ Intervención PT – TDAH</h4><ul><li>División de tareas en pasos cortos con refuerzo positivo inmediato</li><li>Temporizador visual y descansos activos programados</li><li>Ubicación preferente en el aula: cerca del docente, sin distractores</li><li>Agenda de tareas diaria con checklist visual</li><li>Coordinación con familia y, si procede, con médico/psicólogo externo</li></ul></div>
+        <div class="perfil-detail pd-motriz" id="detail-motriz"><h4>♿ Intervención PT – Discapacidad motriz</h4><ul><li>Evaluación de accesibilidad del espacio físico y propuesta de mejoras</li><li>Adaptación de materiales: atril, teclado especial, ratón adaptado</li><li>Coordinación con fisioterapeuta/logopeda si el centro dispone</li><li>Adaptación de la evaluación a las capacidades de expresión del alumno</li><li>Plan de autonomía progresiva con objetivos mensuales</li></ul></div>
+      </div>
+
+      <div class="demo-panel" id="informe">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Vista previa de informe trimestral PT (modelo):</p>
+        <div class="informe-preview">
+          <div class="inf-header">
+            <h4>Informe de Seguimiento PT — 1º Trimestre</h4>
+            <p>Datos simulados a modo de ejemplo · Iván Trujillo Corrochano, PT</p>
+          </div>
+          <div class="inf-body">
+            <div class="inf-grid">
+              <div class="inf-field"><label>Alumno/a</label><div class="val">A.G.M. (iniciales)</div></div>
+              <div class="inf-field"><label>Curso / Etapa</label><div class="val">3º Primaria</div></div>
+              <div class="inf-field"><label>Tipo de necesidad</label><div class="val">ACNEAE – DEA (Dislexia)</div></div>
+              <div class="inf-field"><label>Modalidad de apoyo</label><div class="val">Dentro del aula + 2 ses./semana fuera</div></div>
+            </div>
+            <div class="inf-field" style="margin-top:10px"><label>Evolución del trimestre</label><div class="val">El alumno ha mejorado notablemente en la conciencia fonológica y en la velocidad lectora. Persisten dificultades en la escritura espontánea. Ha mostrado mayor confianza en las producciones orales.</div></div>
+            <div class="inf-field"><label>Objetivos para el siguiente trimestre</label><div class="val">Trabajar la escritura con soporte visual · Consolidar la lectura comprensiva · Introducir el dictado por voz como herramienta compensatoria.</div></div>
+            <div class="inf-field"><label>Observaciones para la familia</label><div class="val">Se recomienda lectura diaria en casa de 10–15 min con el método indicado. Próxima reunión: enero.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-box">
+    <h3>¿Necesitas un especialista PT en tu centro?</h3>
+    <p>Contacta con Iván para recibir el protocolo completo de intervención y los modelos de documentación PT.</p>
+    <button class="cta-btn" onclick="window.location.href='mailto:ivtrujilloc@gmail.com?subject=Plan de Inclusión PT'">Solicitar documentación PT</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showTab(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function showDP(id,btn){document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.dnav-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function showPerfil(id){document.querySelectorAll('.perfil-detail').forEach(d=>d.classList.remove('show'));document.querySelectorAll('.perfil-card').forEach(c=>c.classList.remove('sel'));document.getElementById('detail-'+id).classList.add('show');event.currentTarget.classList.add('sel')}
+</script>
+</body>
+</html>
