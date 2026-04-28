@@ -206,18 +206,22 @@ section { padding: 6rem 2rem; }
 .hero-avatar {
   width: 200px; height: 200px; border-radius: 50%;
   background: rgba(255,255,255,.1);
-  border: 2px solid rgba(255,255,255,.2);
+  border: 3px solid rgba(255,255,255,.35);
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--ff-head);
-  font-size: 4rem; font-weight: 600;
-  color: rgba(255,255,255,.6);
   flex-shrink: 0;
   position: relative;
+  overflow: hidden;
+}
+.hero-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  border-radius: 50%;
 }
 .hero-avatar::after {
   content: '';
   position: absolute; inset: -8px; border-radius: 50%;
-  border: 1px dashed rgba(255,255,255,.15);
+  border: 1px dashed rgba(255,255,255,.2);
+  pointer-events: none;
 }
 
 /* ═══════════════════════════════════
@@ -652,7 +656,9 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
           <a href="#contacto" class="btn-outline">Contactar</a>
         </div>
       </div>
-      <div class="hero-avatar">IT</div>
+      <div class="hero-avatar">
+        <img src="https://drive.google.com/thumbnail?id=1OFC81lzZbcvE_7dfHAdhgdBUa2zXCyiY&sz=w400" alt="Iván Trujillo Corrochano – Docente">
+      </div>
     </div>
   </div>
 </section>
@@ -709,6 +715,22 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
 
       <!-- Columna derecha: skills -->
       <div>
+        <div class="card" style="margin-bottom:1.5rem;padding:0;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:1.25rem;padding:1.25rem;">
+            <img src="https://drive.google.com/thumbnail?id=1OFC81lzZbcvE_7dfHAdhgdBUa2zXCyiY&sz=w300"
+                 alt="Iván Trujillo Corrochano"
+                 style="width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--border);flex-shrink:0;">
+            <div>
+              <div style="font-size:15px;font-weight:500;color:var(--navy)">Iván Trujillo Corrochano</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:2px">Maestro · PT · EF · TIC · UEFA PRO</div>
+              <a href="https://drive.google.com/file/d/1FkjEmSM_Y1ePbHMb_NKlJn6D7aN3laTs/view?usp=sharing"
+                 target="_blank"
+                 style="display:inline-flex;align-items:center;gap:5px;margin-top:8px;background:var(--navy);color:white;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:500;text-decoration:none;">
+                ⬇ Descargar CV
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="card" style="margin-bottom:1.5rem;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center;">
             <div>
@@ -850,7 +872,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
           <span class="etapa-pill">Bachillerato</span>
           <span class="etapa-pill">FP</span>
         </div>
-        <a class="proj-link" href="proyectos_docentes/proyecto_tic.html" target="_blank">Ver demo completa →</a>
+        <a class="proj-link" href="PEGA_AQUI_ENLACE_DRIVE_DEMO_TIC" target="_blank">Ver demo completa →</a>
       </div>
 
       <div class="proj-card pc2 fade-up">
@@ -870,7 +892,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
           <span class="etapa-pill">Secundaria</span>
           <span class="etapa-pill">Bachillerato</span>
         </div>
-        <a class="proj-link" href="proyectos_docentes/proyecto_ef.html" target="_blank">Ver demo completa →</a>
+        <a class="proj-link" href="PEGA_AQUI_ENLACE_DRIVE_DEMO_EF" target="_blank">Ver demo completa →</a>
       </div>
 
       <div class="proj-card pc3 fade-up">
@@ -890,7 +912,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
           <span class="etapa-pill">Secundaria</span>
           <span class="etapa-pill">FP</span>
         </div>
-        <a class="proj-link" href="proyectos_docentes/proyecto_pt.html" target="_blank">Ver demo completa →</a>
+        <a class="proj-link" href="PEGA_AQUI_ENLACE_DRIVE_DEMO_PT" target="_blank">Ver demo completa →</a>
       </div>
 
       <div class="proj-card pc4 fade-up">
@@ -909,7 +931,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
           <span class="etapa-pill">Secundaria</span>
           <span class="etapa-pill">Bachillerato</span>
         </div>
-        <a class="proj-link" href="proyectos_docentes/proyecto_deportivo.html" target="_blank">Ver demo completa →</a>
+        <a class="proj-link" href="PEGA_AQUI_ENLACE_DRIVE_DEMO_DEPORTIVO" target="_blank">Ver demo completa →</a>
       </div>
 
     </div>
@@ -1120,7 +1142,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.35); }
 
     <div class="cv-block">
       <p>💾 ¿Prefieres revisar mi CV completo primero?</p>
-      <a class="cv-btn" href="CV_CP_Docente_2026_Iván_Trujillo_Mag.pdf" download>⬇ Descargar CV (PDF)</a>
+      <a class="cv-btn" href="https://drive.google.com/file/d/1FkjEmSM_Y1ePbHMb_NKlJn6D7aN3laTs/view?usp=sharing" target="_blank">⬇ Descargar CV (PDF)</a>
     </div>
   </div>
 </section>
