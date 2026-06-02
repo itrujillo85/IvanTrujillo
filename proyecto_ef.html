@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ivantrujillo.es/proyecto_ef.html">
-<meta name="description" content="EF Inclusiva: proyecto de Educación Física adaptada e inclusiva de Iván Trujillo para atención a la diversidad en el aula.">
-<title>EF Inclusiva – Iván Trujillo</title>
+<link rel="canonical" href="https://ivantrujillo.es/proyecto_deportivo.html">
+<meta name="description" content="Academia Deportiva Escolar: proyecto de Iván Trujillo para la dinamización deportiva en centros educativos de Primaria y Secundaria.">
+<title>Academia Deportiva Escolar – Iván Trujillo</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#f4faf7;color:#1a1a1a}
-.hero{background:linear-gradient(135deg,#085041,#0F6E56,#1D9E75);color:white;padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+body{font-family:'DM Sans',sans-serif;background:#fff8f6;color:#1a1a1a}
+.hero{background:linear-gradient(135deg,#4A1B0C,#993C1D,#D85A30);color:white;padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.05)}
 .back{color:rgba(255,255,255,0.75);font-size:12px;margin-bottom:1rem;display:inline-block;text-decoration:none}
 .hero-tag{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;display:inline-block;margin-bottom:0.75rem}
@@ -20,109 +20,97 @@ body{font-family:'DM Sans',sans-serif;background:#f4faf7;color:#1a1a1a}
 .hero-pills{display:flex;gap:8px;flex-wrap:wrap}
 .pill{background:rgba(255,255,255,0.15);border-radius:12px;padding:3px 10px;font-size:11px}
 
-.tabs-bar{background:white;border-bottom:2px solid #d4f0e5;display:flex;position:sticky;top:0;z-index:10}
+.tabs-bar{background:white;border-bottom:2px solid #F5C4B3;display:flex;position:sticky;top:0;z-index:10}
 .tab{padding:0.9rem 1.5rem;font-size:13px;font-weight:500;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none}
-.tab:hover{color:#0F6E56}
-.tab.active{color:#085041;border-bottom-color:#0F6E56}
+.tab:hover{color:#993C1D}
+.tab.active{color:#4A1B0C;border-bottom-color:#D85A30}
 
 .main{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
-.panel{display:none}
-.panel.active{display:block}
+.panel{display:none}.panel.active{display:block}
 
 .ficha-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
-.ficha-item{background:white;border-radius:12px;padding:1rem 1.25rem;border:1px solid #d4f0e5}
-.ficha-item label{font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:#0F6E56;font-weight:500;display:block;margin-bottom:4px}
+.ficha-item{background:white;border-radius:12px;padding:1rem 1.25rem;border:1px solid #F5C4B3}
+.ficha-item label{font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:#D85A30;font-weight:500;display:block;margin-bottom:4px}
 .ficha-item p{font-size:13px;color:#333;line-height:1.5}
 .ficha-full{grid-column:1/-1}
 .obj-list{list-style:none;padding:0}
-.obj-list li{font-size:13px;color:#333;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid #f0f9f5;line-height:1.5}
-.obj-list li::before{content:'✓';position:absolute;left:0;color:#0F6E56;font-weight:700}
+.obj-list li{font-size:13px;color:#333;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid #fff0eb;line-height:1.5}
+.obj-list li::before{content:'✓';position:absolute;left:0;color:#D85A30;font-weight:700}
 .mat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:0.75rem}
-.mat-card{background:#E1F5EE;border-radius:10px;padding:0.75rem 1rem;text-align:center}
+.mat-card{background:#FAECE7;border-radius:10px;padding:0.75rem 1rem;text-align:center}
 .mat-card .ico{font-size:1.5rem;margin-bottom:4px}
-.mat-card p{font-size:12px;color:#0F6E56;font-weight:500}
+.mat-card p{font-size:12px;color:#993C1D;font-weight:500}
 .comp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.comp-tag{background:#085041;color:white;border-radius:10px;padding:3px 10px;font-size:11px}
-.result-box{background:linear-gradient(135deg,#E1F5EE,#f0faf6);border-radius:12px;padding:1.25rem;border-left:4px solid #0F6E56;margin-top:1rem}
-.result-box h4{font-size:13px;font-weight:500;color:#085041;margin-bottom:8px}
+.comp-tag{background:#4A1B0C;color:white;border-radius:10px;padding:3px 10px;font-size:11px}
+.result-box{background:linear-gradient(135deg,#FAECE7,#fff8f6);border-radius:12px;padding:1.25rem;border-left:4px solid #D85A30;margin-top:1rem}
+.result-box h4{font-size:13px;font-weight:500;color:#4A1B0C;margin-bottom:8px}
 .result-box p{font-size:13px;color:#333;line-height:1.6}
 
 .steps{position:relative}
-.steps::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:#E1F5EE;z-index:0}
+.steps::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:#F5C4B3;z-index:0}
 .step{display:flex;gap:1rem;margin-bottom:1.5rem;position:relative;z-index:1}
-.step-num{width:44px;height:44px;border-radius:50%;background:#0F6E56;color:white;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif}
-.step-body{background:white;border-radius:12px;padding:1rem 1.25rem;flex:1;border:1px solid #d4f0e5}
-.step-body h4{font-size:14px;font-weight:500;color:#085041;margin-bottom:4px}
-.step-body .duracion{font-size:11px;color:#0F6E56;font-weight:500;background:#E1F5EE;padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:6px}
+.step-num{width:44px;height:44px;border-radius:50%;background:#D85A30;color:white;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif}
+.step-body{background:white;border-radius:12px;padding:1rem 1.25rem;flex:1;border:1px solid #F5C4B3}
+.step-body h4{font-size:14px;font-weight:500;color:#4A1B0C;margin-bottom:4px}
+.step-body .duracion{font-size:11px;color:#D85A30;font-weight:500;background:#FAECE7;padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:6px}
 .step-body p{font-size:13px;color:#555;line-height:1.6}
-.step-body .tips{margin-top:8px;font-size:12px;color:#888;font-style:italic;padding-left:10px;border-left:2px solid #9FE1CB}
+.step-body .tips{margin-top:8px;font-size:12px;color:#888;font-style:italic;padding-left:10px;border-left:2px solid #F5C4B3}
+.section-label{font-family:'Playfair Display',serif;font-size:1rem;color:#4A1B0C;margin:1.25rem 0 0.75rem;border-bottom:1px solid #F5C4B3;padding-bottom:0.4rem}
 
-.demo-wrapper{background:white;border-radius:16px;border:1px solid #d4f0e5;overflow:hidden}
-.demo-header{background:#085041;color:white;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.demo-wrapper{background:white;border-radius:16px;border:1px solid #F5C4B3;overflow:hidden}
+.demo-header{background:#4A1B0C;color:white;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .demo-header h3{font-size:14px;font-weight:500}
 .demo-nav{display:flex;gap:6px;flex-wrap:wrap}
 .dnav-btn{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:white;border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer}
 .dnav-btn:hover,.dnav-btn.active{background:rgba(255,255,255,0.35)}
 .demo-screen{padding:1.5rem;min-height:380px}
-.demo-panel{display:none}
-.demo-panel.active{display:block}
+.demo-panel{display:none}.demo-panel.active{display:block}
 
-/* Unidad didáctica visual */
-.ud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.ud-card{border-radius:12px;padding:1rem;border:1px solid #d4f0e5;cursor:pointer;transition:all 0.2s}
-.ud-card:hover{border-color:#0F6E56;background:#f0faf6}
-.ud-card.sel{background:#E1F5EE;border-color:#0F6E56}
-.ud-card .ud-ico{font-size:1.8rem;margin-bottom:6px}
-.ud-card h5{font-size:12px;font-weight:500;color:#085041;margin-bottom:4px}
-.ud-card p{font-size:11px;color:#666;line-height:1.4}
-.ud-detail{background:#E1F5EE;border-radius:12px;padding:1.25rem;margin-top:1rem;display:none}
-.ud-detail.show{display:block}
-.ud-detail h4{font-size:14px;font-weight:500;color:#085041;margin-bottom:8px}
-.ud-detail ul{padding-left:1rem}
-.ud-detail ul li{font-size:13px;color:#1a3a2a;line-height:1.7}
+/* Valores */
+.valores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px}
+.valor-card{border-radius:12px;padding:1rem;text-align:center;border:1px solid #F5C4B3;background:#fff8f6;cursor:pointer;transition:all 0.2s}
+.valor-card:hover,.valor-card.sel{background:#FAECE7;border-color:#D85A30}
+.valor-card .v-ico{font-size:2rem;margin-bottom:6px}
+.valor-card h5{font-size:12px;font-weight:500;color:#4A1B0C;margin-bottom:3px}
+.valor-card p{font-size:11px;color:#666}
+.valor-detail{background:#FAECE7;border-radius:12px;padding:1.25rem;margin-top:1rem;display:none}
+.valor-detail.show{display:block}
+.valor-detail h4{font-size:14px;font-weight:500;color:#4A1B0C;margin-bottom:8px}
+.valor-detail ul{padding-left:1rem}
+.valor-detail ul li{font-size:13px;color:#2a0e05;line-height:1.7}
 
-/* Adaptaciones */
-.adapt-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:1rem}
-.adapt-card{background:white;border-radius:12px;padding:1rem;border:1px solid #d4f0e5}
-.adapt-card .a-label{font-size:10px;text-transform:uppercase;letter-spacing:0.5px;font-weight:500;margin-bottom:6px;display:block}
-.adapt-card.gen .a-label{color:#185FA5}
-.adapt-card.nee .a-label{color:#854F0B}
-.adapt-card.tea .a-label{color:#A32D2D}
-.adapt-card ul{padding-left:1rem}
-.adapt-card ul li{font-size:12px;color:#444;line-height:1.7}
+/* Temporada */
+.temp-table{width:100%;border-collapse:collapse;font-size:13px}
+.temp-table th{background:#4A1B0C;color:white;padding:8px 12px;text-align:left;font-weight:500}
+.temp-table td{padding:8px 12px;border-bottom:1px solid #fff0eb;color:#333}
+.temp-table tr:nth-child(even) td{background:#fff8f6}
+.phase-badge{border-radius:8px;padding:2px 8px;font-size:11px;font-weight:500;display:inline-block}
+.pb1{background:#FAECE7;color:#4A1B0C}
+.pb2{background:#FAEEDA;color:#633806}
+.pb3{background:#E1F5EE;color:#085041}
+.pb4{background:#E6F1FB;color:#0C447C}
 
-/* Evaluación rueda */
-.eval-circle-wrap{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
-.eval-item{text-align:center;width:120px}
-.eval-circle{width:80px;height:80px;border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:22px;position:relative}
-.eval-item h5{font-size:12px;font-weight:500;color:#085041;margin-bottom:2px}
-.eval-item p{font-size:11px;color:#666}
-.ec1{background:#E1F5EE;border:3px solid #0F6E56}
-.ec2{background:#E6F1FB;border:3px solid #185FA5}
-.ec3{background:#FAEEDA;border:3px solid #BA7517}
-.ec4{background:#FAECE7;border:3px solid #993C1D}
+/* Perfil del alumno */
+.alumno-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.alumno-stat{background:#fff8f6;border:1px solid #F5C4B3;border-radius:12px;padding:1rem;text-align:center}
+.alumno-stat .stat-ico{font-size:1.8rem;margin-bottom:6px}
+.alumno-stat h5{font-size:24px;font-weight:600;color:#D85A30;margin-bottom:2px}
+.alumno-stat p{font-size:12px;color:#666}
 
-.cta-box{background:linear-gradient(135deg,#085041,#1D9E75);border-radius:14px;padding:1.5rem;text-align:center;color:white;margin-top:2rem}
+.cta-box{background:linear-gradient(135deg,#4A1B0C,#D85A30);border-radius:14px;padding:1.5rem;text-align:center;color:white;margin-top:2rem}
 .cta-box h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px}
 .cta-box p{font-size:13px;opacity:0.85;margin-bottom:1rem}
-.cta-btn{background:white;color:#085041;border:none;border-radius:20px;padding:8px 22px;font-size:13px;font-weight:500;cursor:pointer}
-
-.section-label{font-family:'Playfair Display',serif;font-size:1rem;color:#085041;margin:1.25rem 0 0.75rem;border-bottom:1px solid #d4f0e5;padding-bottom:0.4rem}
+.cta-btn{background:white;color:#4A1B0C;border:none;border-radius:20px;padding:8px 22px;font-size:13px;font-weight:500;cursor:pointer}
 </style>
 </head>
 <body>
-
 <div class="hero">
   <a class="back" href="index.html">← Volver a proyectos</a>
-  <div class="hero-tag">🏃 Educación Física · Inclusión</div>
-  <h1>Educación Física Inclusiva</h1>
-  <p class="lead">Programa de EF adaptada que integra al alumnado con NEE y TEA en el grupo ordinario mediante juego cooperativo, retos motores graduados y adaptaciones individualizadas.</p>
+  <div class="hero-tag">⚽ Actividades deportivas extraescolares</div>
+  <h1>Academia Deportiva Escolar</h1>
+  <p class="lead">Programa extraescolar de deporte educativo con metodología UEFA PRO: valores, liderazgo, trabajo en equipo y desarrollo integral del alumno más allá del aula. Más de 540 alumnos gestionados por temporada.</p>
   <div class="hero-pills">
-    <span class="pill">Infantil</span>
-    <span class="pill">Primaria</span>
-    <span class="pill">Secundaria</span>
-    <span class="pill">Bachillerato</span>
-    <span class="pill">Duración: anual</span>
+    <span class="pill">Primaria</span><span class="pill">Secundaria</span><span class="pill">Bachillerato</span><span class="pill">Duración: anual</span><span class="pill">UEFA PRO</span>
   </div>
 </div>
 
@@ -137,50 +125,53 @@ body{font-family:'DM Sans',sans-serif;background:#f4faf7;color:#1a1a1a}
 <!-- FICHA -->
 <div class="panel active" id="ficha">
   <div class="ficha-grid">
-    <div class="ficha-item"><label>Nombre del proyecto</label><p>Educación Física Inclusiva</p></div>
-    <div class="ficha-item"><label>Área</label><p>Educación Física · Atención a la Diversidad</p></div>
-    <div class="ficha-item"><label>Etapa educativa</label><p>Infantil · Primaria · Secundaria · Bachillerato</p></div>
-    <div class="ficha-item"><label>Duración</label><p>Integración continua a lo largo del curso escolar</p></div>
+    <div class="ficha-item"><label>Nombre del proyecto</label><p>Academia Deportiva Escolar</p></div>
+    <div class="ficha-item"><label>Área</label><p>Actividades extraescolares deportivas</p></div>
+    <div class="ficha-item"><label>Etapa educativa</label><p>Primaria · Secundaria · Bachillerato</p></div>
+    <div class="ficha-item"><label>Duración</label><p>Anual (septiembre–junio) · 2–3 sesiones/semana</p></div>
     <div class="ficha-item ficha-full">
       <label>Descripción</label>
-      <p>Un programa de Educación Física donde todos los alumnos participan juntos con adaptaciones específicas para quienes presentan NEE, TEA u otras necesidades. El diseño universal del aprendizaje (DUA) guía cada sesión: mismo juego, distintas formas de participar. Se trabajan valores de empatía, cooperación y respeto a la diferencia como contenidos propios de la asignatura.</p>
+      <p>Un programa deportivo extraescolar que va mucho más allá de enseñar a jugar al fútbol. Con la metodología UEFA PRO y la experiencia acumulada en canteras de la Fundación Real Madrid y Rayo Vallecano, se diseña un itinerario de desarrollo integral donde el deporte es el vehículo para trabajar valores, inteligencia emocional, liderazgo, resolución de conflictos y trabajo en equipo. Cada grupo tiene su propio plan de temporada, evaluación formativa y reunión de seguimiento con las familias.</p>
     </div>
     <div class="ficha-item ficha-full">
-      <label>Objetivos didácticos</label>
+      <label>Objetivos</label>
       <ul class="obj-list">
-        <li>Garantizar la participación plena y activa de todo el alumnado, incluido ACNEAE</li>
-        <li>Desarrollar habilidades motrices adaptadas al nivel y necesidades de cada alumno/a</li>
-        <li>Fomentar valores de cooperación, respeto e inclusión entre iguales</li>
-        <li>Aplicar el Diseño Universal para el Aprendizaje (DUA) en el área de EF</li>
-        <li>Conectar la actividad física con el bienestar emocional y la salud integral</li>
+        <li>Desarrollar habilidades técnicas y tácticas deportivas adaptadas a cada edad</li>
+        <li>Trabajar valores de respeto, compañerismo, esfuerzo y fair play en cada sesión</li>
+        <li>Fomentar la inteligencia emocional y la gestión de la frustración y el éxito</li>
+        <li>Crear un entorno seguro, inclusivo y motivador para todo el alumnado</li>
+        <li>Coordinar con las familias el proceso de desarrollo del alumno</li>
+        <li>Detectar y potenciar el talento deportivo de manera ética y educativa</li>
       </ul>
     </div>
     <div class="ficha-item ficha-full">
-      <label>Materiales</label>
+      <label>Recursos y materiales</label>
       <div class="mat-grid">
-        <div class="mat-card"><div class="ico">🏐</div><p>Material deportivo adaptado (pelotas blandas, petos de colores)</p></div>
-        <div class="mat-card"><div class="ico">🃏</div><p>Tarjetas pictográficas de instrucciones y roles</p></div>
-        <div class="mat-card"><div class="ico">📋</div><p>Rúbricas adaptadas por nivel</p></div>
-        <div class="mat-card"><div class="ico">📱</div><p>App de temporizador visual y música motivacional</p></div>
-        <div class="mat-card"><div class="ico">🎯</div><p>Señales visuales en el suelo (circuitos)</p></div>
-        <div class="mat-card"><div class="ico">🤝</div><p>Fichas de roles cooperativos ilustradas</p></div>
+        <div class="mat-card"><div class="ico">⚽</div><p>Material deportivo (balones, conos, petos)</p></div>
+        <div class="mat-card"><div class="ico">📋</div><p>Plan de temporada individualizado por grupo</p></div>
+        <div class="mat-card"><div class="ico">🏅</div><p>Sistema de reconocimiento y logros</p></div>
+        <div class="mat-card"><div class="ico">📱</div><p>App de comunicación con familias (ClassDojo / Seesaw)</p></div>
+        <div class="mat-card"><div class="ico">🎥</div><p>Vídeo-análisis de sesiones para retroalimentación</p></div>
+        <div class="mat-card"><div class="ico">📊</div><p>Ficha de seguimiento individual por alumno</p></div>
       </div>
     </div>
     <div class="ficha-item ficha-full">
-      <label>Competencias clave (LOMLOE)</label>
+      <label>Valores y competencias trabajadas</label>
       <div class="comp-tags">
-        <span class="comp-tag">Competencia motriz</span>
-        <span class="comp-tag">Competencias sociales y cívicas</span>
-        <span class="comp-tag">Bienestar personal y salud</span>
-        <span class="comp-tag">Aprender a aprender</span>
-        <span class="comp-tag">Conciencia y expresión cultural</span>
+        <span class="comp-tag">Respeto</span>
+        <span class="comp-tag">Trabajo en equipo</span>
+        <span class="comp-tag">Liderazgo positivo</span>
+        <span class="comp-tag">Gestión emocional</span>
+        <span class="comp-tag">Fair play</span>
+        <span class="comp-tag">Resiliencia</span>
+        <span class="comp-tag">Autonomía</span>
       </div>
     </div>
     <div class="ficha-item ficha-full">
       <label>Resultados esperados</label>
       <div class="result-box">
-        <h4>El alumnado será capaz de:</h4>
-        <p>Participar activamente en todas las actividades con la adaptación adecuada · Respetar las diferencias de habilidad y necesidad entre compañeros · Asumir roles cooperativos durante los juegos · El alumnado con NEE/TEA mejora su participación social y su autonomía en el espacio físico.</p>
+        <h4>Al finalizar la temporada, el alumno habrá:</h4>
+        <p>Mejorado su nivel técnico y su comprensión del juego · Desarrollado habilidades socioemocionales transferibles a otros ámbitos de su vida · Vivido el deporte como espacio de crecimiento personal y colectivo · Recibido un informe de evolución compartido con su familia.</p>
       </div>
     </div>
   </div>
@@ -188,60 +179,51 @@ body{font-family:'DM Sans',sans-serif;background:#f4faf7;color:#1a1a1a}
 
 <!-- GUÍA -->
 <div class="panel" id="guia">
-  <p style="font-size:13px;color:#555;margin-bottom:1.5rem;line-height:1.6">Estructura de sesión tipo y secuencia de implementación a lo largo del curso. Cada sesión incluye calentamiento, parte principal adaptada y vuelta a la calma con reflexión.</p>
+  <p style="font-size:13px;color:#555;margin-bottom:1.5rem;line-height:1.6">Estructura de temporada con 4 fases diferenciadas. Cada fase tiene objetivos técnicos, tácticos y de valores específicos.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>Diagnóstico inicial e identificación de necesidades</h4>
-        <span class="duracion">Semana 1 · Antes de comenzar</span>
-        <p>Revisión del historial del alumnado con PT/orientación. Reunión con familias de ACNEAE para conocer particularidades. Diseño de adaptaciones previas para las primeras 4 semanas (revisables). Preparación de pictogramas y señales visuales para el espacio.</p>
-        <div class="tips">💡 Tip: crea junto con el PT/orientador del centro un documento de perfil motor por alumno para consulta rápida en el patio.</div>
+        <h4>Pretemporada: conocimiento y cohesión</h4>
+        <span class="duracion">Septiembre · Semanas 1–4</span>
+        <p>Presentación del programa, normas y valores del grupo. Test de nivel técnico y físico inicial. Dinámicas de cohesión: "¿quién soy yo como jugador y como compañero?". Formación de equipos equilibrados. Primer contacto con las familias y explicación del plan de temporada.</p>
+        <div class="tips">💡 Tip: usa ClassDojo desde el primer día para mantener a las familias informadas con fotos y notas breves de cada sesión.</div>
       </div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h4>Presentación y acuerdo de grupo</h4>
-        <span class="duracion">Semana 1-2 · Sesión 1-2</span>
-        <p>Dinámica de cohesión grupal: "todos tenemos superpoderes distintos". Se presentan los roles cooperativos (guía, observador, animador, árbitro) y se acuerdan las normas de convivencia del espacio de EF. El alumnado con TEA/NEE participa en la definición de normas.</p>
-        <div class="tips">💡 Tip: plastifica las normas con pictogramas y colócalas en el vestuario y el gimnasio durante todo el curso.</div>
+        <h4>Bloque técnico-táctico</h4>
+        <span class="duracion">Octubre–Diciembre · 3 meses</span>
+        <p>Progresión técnica adaptada a la edad: control, pase, conducción, regate, tiro (Primaria) + conceptos tácticos colectivos (Secundaria). Cada sesión incluye un "momento de valores": el entrenador propone una situación y el grupo reflexiona. Torneos internos de fin de bloque con criterios de evaluación más allá del resultado.</p>
+        <div class="tips">💡 Tip: el "jugador de la sesión" no se elige por marcar goles, sino por actitudes: ayudar al compañero, esfuerzo, fair play.</div>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <h4>Unidades didácticas con DUA integrado</h4>
-        <span class="duracion">A lo largo del curso · Sesiones ordinarias</span>
-        <p>Cada UD (habilidades motrices, juegos populares, atletismo, deportes colectivos) incluye una versión adaptada de cada actividad. Ejemplo: en un circuito de atletismo, el alumno con NEE completa la distancia que puede; el TEA dispone de señales visuales en el recorrido. Las fichas de evaluación se adaptan al nivel de cada uno.</p>
-        <div class="tips">💡 Tip: usa el mismo juego con 3 niveles de dificultad simultáneos para que nadie se sienta separado del grupo.</div>
+        <h4>Bloque de competición educativa</h4>
+        <span class="duracion">Enero–Abril · 4 meses</span>
+        <p>Participación en competiciones escolares o internas. Antes de cada partido: charla táctica y de valores. Después: análisis breve (¿qué hicimos bien? ¿qué podemos mejorar?) en grupo. El entrenador regula el tiempo de juego para garantizar participación equitativa. El resultado importa menos que el proceso.</p>
+        <div class="tips">💡 Tip: filma momentos del partido y proyéctalos en la siguiente sesión — los alumnos aprenden el doble cuando se ven a sí mismos.</div>
       </div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
       <div class="step-body">
-        <h4>Seguimiento, ajuste y coordinación</h4>
-        <span class="duracion">Mensual · Todo el curso</span>
-        <p>Reunión mensual con PT, orientador y tutores para revisar la evolución del alumnado ACNEAE en EF. Ajuste de adaptaciones. Informe de progreso trimestral que complementa al informe del tutor. Se comparte con la familia en cada reunión de seguimiento.</p>
-        <div class="tips">💡 Tip: usa Google Forms para registrar observaciones después de cada sesión — ahorra tiempo y deja trazabilidad digital.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <h4>Jornada de deporte inclusivo</h4>
-        <span class="duracion">Final de trimestre · Evento especial</span>
-        <p>Una vez por trimestre, se organiza una jornada deportiva inclusiva abierta a toda la etapa. Juegos cooperativos donde la participación de cada perfil es fundamental para el éxito del equipo. Se invita a familias. Se comparte en el blog o Google Site del centro.</p>
-        <div class="tips">💡 Tip: documenta la jornada con fotos (con permiso de imagen) y compártela en la web del colegio para visibilizar el proyecto.</div>
+        <h4>Cierre de temporada y proyección</h4>
+        <span class="duracion">Mayo–Junio · 2 meses</span>
+        <p>Torneo de clausura con familias invitadas. Entrega de reconocimientos personalizados (no solo deportivos). Reunión individual con cada alumno/a y su familia para compartir el informe de evolución. Encuesta de satisfacción. Propuesta de continuidad para el siguiente curso.</p>
+        <div class="tips">💡 Tip: el diploma de cierre debe mencionar algo específico de cada alumno — ese detalle lo guardan toda la vida.</div>
       </div>
     </div>
   </div>
-  <div class="section-label">Estructura de sesión tipo (55 min)</div>
+  <div class="section-label">Estructura de sesión tipo (60 min)</div>
   <div class="ficha-grid">
-    <div class="ficha-item"><label>Calentamiento (10 min)</label><p>Juego de activación con instrucciones pictográficas. Música de fondo. Movimiento libre guiado.</p></div>
-    <div class="ficha-item"><label>Parte principal (35 min)</label><p>Actividad central con 2–3 variantes de dificultad. Roles cooperativos activos. Adaptaciones visibles.</p></div>
-    <div class="ficha-item"><label>Vuelta a la calma (7 min)</label><p>Estiramientos con respiración guiada. Música tranquila. Espacio seguro y predecible.</p></div>
-    <div class="ficha-item"><label>Reflexión (3 min)</label><p>"Semáforo emocional": cada alumno/a indica cómo se ha sentido. Registro breve del docente.</p></div>
+    <div class="ficha-item"><label>Calentamiento (10 min)</label><p>Activación física + juego de activación grupal con regla de valor de la semana</p></div>
+    <div class="ficha-item"><label>Parte técnica (20 min)</label><p>Ejercicios analíticos del gesto técnico del bloque. Corrección individual.</p></div>
+    <div class="ficha-item"><label>Parte táctica/juego (25 min)</label><p>Situación de juego real con la táctica trabajada. Paradas para reflexión grupal.</p></div>
+    <div class="ficha-item"><label>Vuelta a la calma (5 min)</label><p>Estiramiento + "minuto de valores": ¿quién destacó hoy siendo buen compañero/a?</p></div>
   </div>
 </div>
 
@@ -249,150 +231,84 @@ body{font-family:'DM Sans',sans-serif;background:#f4faf7;color:#1a1a1a}
 <div class="panel" id="demo">
   <div class="demo-wrapper">
     <div class="demo-header">
-      <h3>🏃 Simulador de EF Inclusiva</h3>
+      <h3>⚽ Simulador de Academia Deportiva</h3>
       <div class="demo-nav">
-        <button class="dnav-btn active" onclick="showDP('unidades',this)">Unidades</button>
-        <button class="dnav-btn" onclick="showDP('adaptaciones',this)">Adaptaciones</button>
-        <button class="dnav-btn" onclick="showDP('evaluacion',this)">Evaluación</button>
+        <button class="dnav-btn active" onclick="showDP('valores',this)">Valores</button>
+        <button class="dnav-btn" onclick="showDP('temporada',this)">Temporada</button>
+        <button class="dnav-btn" onclick="showDP('impacto',this)">Impacto</button>
       </div>
     </div>
     <div class="demo-screen">
 
-      <div class="demo-panel active" id="unidades">
-        <p style="font-size:13px;color:#666;margin-bottom:1rem">Selecciona una unidad didáctica para ver cómo se adapta a distintos perfiles:</p>
-        <div class="ud-grid">
-          <div class="ud-card" onclick="showUD('atletismo')">
-            <div class="ud-ico">🏃</div>
-            <h5>Atletismo</h5>
-            <p>Carreras, saltos y lanzamientos adaptados</p>
+      <div class="demo-panel active" id="valores">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Selecciona un valor para ver cómo se trabaja en el programa:</p>
+        <div class="valores-grid">
+          <div class="valor-card" onclick="showValor('respeto')">
+            <div class="v-ico">🤝</div><h5>Respeto</h5><p>Al rival, al árbitro y al compañero</p>
           </div>
-          <div class="ud-card" onclick="showUD('cooperativos')">
-            <div class="ud-ico">🤝</div>
-            <h5>Juegos cooperativos</h5>
-            <p>Todos participan, nadie queda fuera</p>
+          <div class="valor-card" onclick="showValor('liderazgo')">
+            <div class="v-ico">⭐</div><h5>Liderazgo</h5><p>Liderar desde el ejemplo y el servicio</p>
           </div>
-          <div class="ud-card" onclick="showUD('populares')">
-            <div class="ud-ico">🎮</div>
-            <h5>Juegos populares</h5>
-            <p>Tradición y adaptación cultural</p>
+          <div class="valor-card" onclick="showValor('resiliencia')">
+            <div class="v-ico">💪</div><h5>Resiliencia</h5><p>Aprender de los errores y seguir</p>
           </div>
-          <div class="ud-card" onclick="showUD('deportes')">
-            <div class="ud-ico">⚽</div>
-            <h5>Deportes colectivos</h5>
-            <p>Fútbol, baloncesto y voleibol adaptados</p>
+          <div class="valor-card" onclick="showValor('equipo')">
+            <div class="v-ico">🏆</div><h5>Trabajo en equipo</h5><p>El equipo siempre por encima del individuo</p>
           </div>
         </div>
-        <div class="ud-detail" id="detail-atletismo">
-          <h4>🏃 Atletismo inclusivo</h4>
-          <ul>
-            <li><strong>Perfil general:</strong> carrera 50m cronometrada, salto de longitud estándar</li>
-            <li><strong>Perfil NEE motriz:</strong> circuito de marcha con señales en el suelo, distancia adaptada</li>
-            <li><strong>Perfil TEA:</strong> igual que el grupo pero con señales visuales en el recorrido y sin público al inicio</li>
-            <li><strong>Evaluación:</strong> cada alumno/a compite consigo mismo, no con el grupo; se valora la mejora</li>
-          </ul>
-        </div>
-        <div class="ud-detail" id="detail-cooperativos">
-          <h4>🤝 Juegos cooperativos</h4>
-          <ul>
-            <li>El equipo solo gana si todos los miembros completan el reto → nadie sobra</li>
-            <li>Roles pictográficos: cada rol tiene una ficha visual para alumnado con TEA/NEE</li>
-            <li>Ejemplo: "El puente humano" — cada perfil aporta lo que puede, el resultado es del equipo</li>
-            <li>Espacio físico señalizado con colores para facilitar la orientación</li>
-          </ul>
-        </div>
-        <div class="ud-detail" id="detail-populares">
-          <h4>🎮 Juegos populares adaptados</h4>
-          <ul>
-            <li>El escondite, el pañuelo, la rana: reglas simplificadas con pictogramas</li>
-            <li>Roles especiales para alumnado con movilidad reducida (árbitro, juez de salida)</li>
-            <li>Variantes sin competición directa para alumnado con perfil TEA</li>
-            <li>Conexión con el proyecto TIC: los propios alumnos graban y editan las reglas con el móvil</li>
-          </ul>
-        </div>
-        <div class="ud-detail" id="detail-deportes">
-          <h4>⚽ Deportes colectivos adaptados</h4>
-          <ul>
-            <li>Fútbol: portería más grande, juego sin fuera de banda para NEE</li>
-            <li>Baloncesto: aro más bajo, sin presión defensiva para alumnado con dificultades</li>
-            <li>Voleibol: red más baja, bola más suave, turnos garantizados</li>
-            <li>Árbitro visual: el alumno con TEA puede ejercer de árbitro con pictogramas</li>
-          </ul>
-        </div>
+        <div class="valor-detail" id="detail-respeto"><h4>🤝 Cómo se trabaja el Respeto</h4><ul><li>Protocolo de saludo al inicio y al final de cada sesión y partido</li><li>Regla de "mano en el hombro": si ves a un compañero caído, le ayudas antes de continuar</li><li>Análisis grupal de situaciones de falta de respeto observadas en partidos profesionales</li><li>Rol del capitán del día: velar por el respeto durante toda la sesión</li></ul></div>
+        <div class="valor-detail" id="detail-liderazgo"><h4>⭐ Cómo se trabaja el Liderazgo</h4><ul><li>Capitán rotatorio: cada alumno/a lidera el grupo durante una semana</li><li>El capitán dirige el calentamiento y el "minuto de valores" final</li><li>Dinámicas de toma de decisiones: el equipo vota la estrategia del partido</li><li>Reflexión: ¿cuál es la diferencia entre mandar y liderar?</li></ul></div>
+        <div class="valor-detail" id="detail-resiliencia"><h4>💪 Cómo se trabaja la Resiliencia</h4><ul><li>Protocolo post-derrota: 3 cosas positivas del partido antes de hablar de errores</li><li>El "error del día": el entrenador comparte su propio error y lo que aprendió</li><li>Ejercicios de presión progresiva con reflexión posterior sobre gestión emocional</li><li>Carta a uno mismo: al inicio del curso se escriben una carta que abren en junio</li></ul></div>
+        <div class="valor-detail" id="detail-equipo"><h4>🏆 Cómo se trabaja el Trabajo en equipo</h4><ul><li>Retos de equipo: el grupo gana o pierde junto, nunca de forma individual</li><li>Roles rotativos: portero, defensa, mediocampista, delantero — todos prueban todo</li><li>Ejercicio "el engranaje": si una pieza falla, el equipo no funciona</li><li>Celebración colectiva de los logros individuales de cada compañero</li></ul></div>
       </div>
 
-      <div class="demo-panel" id="adaptaciones">
-        <p style="font-size:13px;color:#666;margin-bottom:1rem">Estrategias de adaptación por perfil del alumnado:</p>
-        <div class="adapt-row">
-          <div class="adapt-card gen">
-            <span class="a-label">🟢 Alumnado general</span>
-            <ul>
-              <li>Actividad estándar según currículo</li>
-              <li>Asume rol de guía o modelo</li>
-              <li>Evaluación por rúbrica ordinaria</li>
-            </ul>
-          </div>
-          <div class="adapt-card nee">
-            <span class="a-label">🟡 Alumnado NEE (motriz / cognitiva)</span>
-            <ul>
-              <li>Misma actividad, distancia/peso/velocidad adaptados</li>
-              <li>Instrucciones simplificadas en pasos</li>
-              <li>Evaluación por progreso individual</li>
-            </ul>
-          </div>
-        </div>
-        <div class="adapt-row">
-          <div class="adapt-card tea">
-            <span class="a-label">🔴 Alumnado TEA</span>
-            <ul>
-              <li>Estructura predecible: siempre el mismo orden de sesión</li>
-              <li>Señales visuales y pictogramas en el espacio</li>
-              <li>Zona de descanso sensorial disponible</li>
-              <li>Anticipación del cambio de actividad con aviso previo</li>
-            </ul>
-          </div>
-          <div class="adapt-card gen" style="border-color:#d4f0e5">
-            <span class="a-label" style="color:#085041">♿ Diversidad funcional física</span>
-            <ul>
-              <li>Adaptación del espacio y del material</li>
-              <li>Rol activo diferente (árbitro, anotador, animador)</li>
-              <li>Actividades en silla o con movilidad reducida integradas</li>
-            </ul>
-          </div>
-        </div>
+      <div class="demo-panel" id="temporada">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Planificación de temporada por fases (ejemplo grupo Primaria 4º–6º):</p>
+        <table class="temp-table">
+          <tr><th>Mes</th><th>Fase</th><th>Técnica</th><th>Valor de la fase</th></tr>
+          <tr><td>Sep</td><td><span class="phase-badge pb1">Pretemporada</span></td><td>Evaluación inicial</td><td>Presentación y cohesión</td></tr>
+          <tr><td>Oct</td><td><span class="phase-badge pb2">Bloque técnico</span></td><td>Control y pase</td><td>Respeto</td></tr>
+          <tr><td>Nov</td><td><span class="phase-badge pb2">Bloque técnico</span></td><td>Conducción y regate</td><td>Esfuerzo</td></tr>
+          <tr><td>Dic</td><td><span class="phase-badge pb2">Bloque técnico</span></td><td>Tiro y remate</td><td>Fair play</td></tr>
+          <tr><td>Ene–Feb</td><td><span class="phase-badge pb3">Competición</span></td><td>Táctica colectiva</td><td>Trabajo en equipo</td></tr>
+          <tr><td>Mar–Abr</td><td><span class="phase-badge pb3">Competición</span></td><td>Juego posicional</td><td>Liderazgo</td></tr>
+          <tr><td>May–Jun</td><td><span class="phase-badge pb4">Cierre</span></td><td>Torneo final</td><td>Resiliencia · Reconocimiento</td></tr>
+        </table>
       </div>
 
-      <div class="demo-panel" id="evaluacion">
-        <p style="font-size:13px;color:#666;margin-bottom:1rem">Sistema de evaluación inclusiva: cada alumno/a es evaluado según su punto de partida y su evolución, no en comparación con el grupo.</p>
-        <div class="eval-circle-wrap">
-          <div class="eval-item">
-            <div class="eval-circle ec1">🏃</div>
-            <h5>Logro motor</h5>
-            <p>Progreso respecto al inicio del trimestre</p>
+      <div class="demo-panel" id="impacto">
+        <p style="font-size:13px;color:#666;margin-bottom:1rem">Datos de impacto basados en la experiencia del entrenador (acumulado):</p>
+        <div class="alumno-grid">
+          <div class="alumno-stat">
+            <div class="stat-ico">👦</div>
+            <h5>540+</h5>
+            <p>alumnos gestionados por temporada</p>
           </div>
-          <div class="eval-item">
-            <div class="eval-circle ec2">🤝</div>
-            <h5>Participación</h5>
-            <p>Implicación activa y respeto al grupo</p>
+          <div class="alumno-stat">
+            <div class="stat-ico">📅</div>
+            <h5>10</h5>
+            <p>años de experiencia en deporte base</p>
           </div>
-          <div class="eval-item">
-            <div class="eval-circle ec3">😊</div>
-            <h5>Bienestar</h5>
-            <p>Semáforo emocional al final de cada sesión</p>
+          <div class="alumno-stat">
+            <div class="stat-ico">🏟️</div>
+            <h5>2</h5>
+            <p>canteras profesionales (Real Madrid · Rayo Vallecano)</p>
           </div>
-          <div class="eval-item">
-            <div class="eval-circle ec4">📋</div>
-            <h5>Informe PT</h5>
-            <p>Informe trimestral coordinado con orientación</p>
+          <div class="alumno-stat">
+            <div class="stat-ico">🏅</div>
+            <h5>UEFA PRO</h5>
+            <p>máxima licencia de entrenador (válida hasta 2027)</p>
           </div>
         </div>
+        <p style="font-size:12px;color:#888;margin-top:1.25rem;line-height:1.6">El programa integra la metodología de desarrollo del talento aplicada en canteras de élite con los principios pedagógicos del deporte educativo escolar, adaptando cada elemento a la realidad y al contexto del centro.</p>
       </div>
 
     </div>
   </div>
   <div class="cta-box">
-    <h3>¿Quieres implementar EF Inclusiva en tu centro?</h3>
-    <p>Solicita la programación completa con todas las unidades didácticas adaptadas por etapa y perfil de alumnado.</p>
-    <button class="cta-btn" onclick="window.location.href='mailto:ivtrujilloc@gmail.com?subject=Proyecto EF Inclusiva'">Solicitar programación completa</button>
+    <h3>¿Quieres implementar la Academia Deportiva en tu centro?</h3>
+    <p>Diseño el programa a medida según el espacio, los recursos y el número de alumnos de tu colegio.</p>
+    <button class="cta-btn" onclick="window.location.href='mailto:ivtrujilloc@gmail.com?subject=Academia Deportiva Escolar'">Solicitar propuesta deportiva</button>
   </div>
 </div>
 
@@ -401,7 +317,7 @@ body{font-family:'DM Sans',sans-serif;background:#f4faf7;color:#1a1a1a}
 <script>
 function showTab(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
 function showDP(id,btn){document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.dnav-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
-function showUD(id){document.querySelectorAll('.ud-detail').forEach(d=>d.classList.remove('show'));document.querySelectorAll('.ud-card').forEach(c=>c.classList.remove('sel'));document.getElementById('detail-'+id).classList.add('show');event.currentTarget.classList.add('sel')}
+function showValor(id){document.querySelectorAll('.valor-detail').forEach(d=>d.classList.remove('show'));document.querySelectorAll('.valor-card').forEach(c=>c.classList.remove('sel'));document.getElementById('detail-'+id).classList.add('show');event.currentTarget.classList.add('sel')}
 </script>
 </body>
 </html>
